@@ -11,14 +11,14 @@ import (
 
 	"github.com/flytam/filenamify"
 	"github.com/leaanthony/slicer"
+	"github.com/milselarch/wails/v2/cmd/wails/flags"
+	"github.com/milselarch/wails/v2/internal/colour"
+	"github.com/milselarch/wails/v2/pkg/buildassets"
+	"github.com/milselarch/wails/v2/pkg/clilogger"
+	"github.com/milselarch/wails/v2/pkg/git"
+	"github.com/milselarch/wails/v2/pkg/templates"
 	"github.com/pkg/errors"
 	"github.com/pterm/pterm"
-	"github.com/wailsapp/wails/v2/cmd/wails/flags"
-	"github.com/wailsapp/wails/v2/internal/colour"
-	"github.com/wailsapp/wails/v2/pkg/buildassets"
-	"github.com/wailsapp/wails/v2/pkg/clilogger"
-	"github.com/wailsapp/wails/v2/pkg/git"
-	"github.com/wailsapp/wails/v2/pkg/templates"
 )
 
 func initProject(f *flags.Init) error {

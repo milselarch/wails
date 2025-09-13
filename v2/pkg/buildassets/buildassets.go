@@ -11,9 +11,9 @@ import (
 	"text/template"
 
 	"github.com/leaanthony/gosod"
+	"github.com/milselarch/wails/v2/internal/fs"
+	"github.com/milselarch/wails/v2/internal/project"
 	"github.com/samber/lo"
-	"github.com/wailsapp/wails/v2/internal/fs"
-	"github.com/wailsapp/wails/v2/internal/project"
 )
 
 //go:embed build

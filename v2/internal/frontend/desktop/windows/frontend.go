@@ -19,20 +19,20 @@ import (
 	"unsafe"
 
 	"github.com/bep/debounce"
+	"github.com/milselarch/wails/v2/internal/binding"
+	"github.com/milselarch/wails/v2/internal/frontend"
+	"github.com/milselarch/wails/v2/internal/frontend/desktop/windows/win32"
+	"github.com/milselarch/wails/v2/internal/frontend/desktop/windows/winc"
+	"github.com/milselarch/wails/v2/internal/frontend/desktop/windows/winc/w32"
+	"github.com/milselarch/wails/v2/internal/frontend/originvalidator"
+	wailsruntime "github.com/milselarch/wails/v2/internal/frontend/runtime"
+	"github.com/milselarch/wails/v2/internal/logger"
+	"github.com/milselarch/wails/v2/internal/system/operatingsystem"
+	"github.com/milselarch/wails/v2/pkg/assetserver"
+	"github.com/milselarch/wails/v2/pkg/assetserver/webview"
+	"github.com/milselarch/wails/v2/pkg/options"
+	"github.com/milselarch/wails/v2/pkg/options/windows"
 	"github.com/wailsapp/go-webview2/pkg/edge"
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/internal/frontend/desktop/windows/win32"
-	"github.com/wailsapp/wails/v2/internal/frontend/desktop/windows/winc"
-	"github.com/wailsapp/wails/v2/internal/frontend/desktop/windows/winc/w32"
-	"github.com/wailsapp/wails/v2/internal/frontend/originvalidator"
-	wailsruntime "github.com/wailsapp/wails/v2/internal/frontend/runtime"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/internal/system/operatingsystem"
-	"github.com/wailsapp/wails/v2/pkg/assetserver"
-	"github.com/wailsapp/wails/v2/pkg/assetserver/webview"
-	"github.com/wailsapp/wails/v2/pkg/options"
-	"github.com/wailsapp/wails/v2/pkg/options/windows"
 )
 
 const startURL = "http://wails.localhost/"
@@ -173,14 +173,14 @@ func (f *Frontend) Run(ctx context.Context) error {
 			// If the window is frameless and we are minimizing, then we need to suppress the Resize on the
 			// WebView2. If we don't do this, restoring does not work as expected and first restores with some wrong
 			// size during the restore animation and only fully renders when the animation is done. This highly
-			// depends on the content in the WebView, see https://github.com/wailsapp/wails/issues/1319
+			// depends on the content in the WebView, see https://github.com/milselarch/wails/issues/1319
 			event, _ := arg.Data.(*winc.SizeEventData)
 			if event != nil && event.Type == w32.SIZE_MINIMIZED {
 				// Set minimizing flag to prevent unnecessary redraws during minimize/restore for frameless windows
 				// 设置最小化标志以防止无边框窗口在最小化/恢复过程中的不必要重绘
 				// This fixes window flickering when minimizing/restoring frameless windows
 				// 这修复了无边框窗口在最小化/恢复时的闪烁问题
-				// Reference: https://github.com/wailsapp/wails/issues/3951
+				// Reference: https://github.com/milselarch/wails/issues/3951
 				f.mainWindow.isMinimizing = true
 				return
 			}
@@ -188,7 +188,7 @@ func (f *Frontend) Run(ctx context.Context) error {
 
 		// Clear minimizing flag for all non-minimize size events
 		// 对于所有非最小化的尺寸变化事件,清除最小化标志
-		// Reference: https://github.com/wailsapp/wails/issues/3951
+		// Reference: https://github.com/milselarch/wails/issues/3951
 		f.mainWindow.isMinimizing = false
 
 		if f.resizeDebouncer != nil {

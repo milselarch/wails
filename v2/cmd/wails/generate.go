@@ -7,16 +7,16 @@ import (
 
 	"github.com/leaanthony/debme"
 	"github.com/leaanthony/gosod"
+	"github.com/milselarch/wails/v2/cmd/wails/flags"
+	"github.com/milselarch/wails/v2/cmd/wails/internal/template"
+	"github.com/milselarch/wails/v2/internal/colour"
+	"github.com/milselarch/wails/v2/internal/fs"
+	"github.com/milselarch/wails/v2/internal/project"
+	"github.com/milselarch/wails/v2/pkg/clilogger"
+	"github.com/milselarch/wails/v2/pkg/commands/bindings"
+	"github.com/milselarch/wails/v2/pkg/commands/buildtags"
 	"github.com/pterm/pterm"
 	"github.com/tidwall/sjson"
-	"github.com/wailsapp/wails/v2/cmd/wails/flags"
-	"github.com/wailsapp/wails/v2/cmd/wails/internal/template"
-	"github.com/wailsapp/wails/v2/internal/colour"
-	"github.com/wailsapp/wails/v2/internal/fs"
-	"github.com/wailsapp/wails/v2/internal/project"
-	"github.com/wailsapp/wails/v2/pkg/clilogger"
-	"github.com/wailsapp/wails/v2/pkg/commands/bindings"
-	"github.com/wailsapp/wails/v2/pkg/commands/buildtags"
 )
 
 func generateModule(f *flags.GenerateModule) error {

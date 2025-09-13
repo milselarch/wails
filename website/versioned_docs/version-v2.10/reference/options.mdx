@@ -11,11 +11,11 @@ It is passed to the `wails.Run()` method:
 
 ```go title="Example"
 import (
-    "github.com/wailsapp/wails/v2/pkg/options"
-    "github.com/wailsapp/wails/v2/pkg/options/assetserver"
-    "github.com/wailsapp/wails/v2/pkg/options/linux"
-    "github.com/wailsapp/wails/v2/pkg/options/mac"
-    "github.com/wailsapp/wails/v2/pkg/options/windows"
+    "github.com/milselarch/wails/v2/pkg/options"
+    "github.com/milselarch/wails/v2/pkg/options/assetserver"
+    "github.com/milselarch/wails/v2/pkg/options/linux"
+    "github.com/milselarch/wails/v2/pkg/options/mac"
+    "github.com/milselarch/wails/v2/pkg/options/windows"
 )
 
 func main() {
@@ -327,7 +327,7 @@ If not defined, the result is the following in cases where the Handler would hav
 This does not work with vite v5.0.0+ and wails v2 due to changes in vite.
 Changes are planned in v3 to support similar functionality under vite v5.0.0+.
 If you need this feature, stay with vite v4.0.0+.
-See [issue 3240](https://github.com/wailsapp/wails/issues/3240) for details
+See [issue 3240](https://github.com/milselarch/wails/issues/3240) for details
 
 :::
 
@@ -1067,7 +1067,7 @@ This option is used for determining the webview's hardware acceleration policy.
 Name: WebviewGpuPolicy<br/>
 Type: [`options.WebviewGpuPolicy`](#webviewgpupolicy-type)<br/>
 Default (Windows, macOS): `WebviewGpuPolicyAlways`<br/>
-Default (Linux): Due to [#2977](https://github.com/wailsapp/wails/issues/2977,), if `options.Linux` is nil 
+Default (Linux): Due to [#2977](https://github.com/milselarch/wails/issues/2977,), if `options.Linux` is nil
 	    in the call to `wails.Run()`, `WebviewGpuPolicy` is set by default to `WebviewGpuPolicyNever`. You can override this behavior by passing a non-nil `Options` and set `WebviewGpuPolicy` as needed.
 
 

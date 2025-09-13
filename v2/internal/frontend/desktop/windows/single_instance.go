@@ -4,8 +4,8 @@ package windows
 
 import (
 	"encoding/json"
-	"github.com/wailsapp/wails/v2/internal/frontend/desktop/windows/winc/w32"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/milselarch/wails/v2/internal/frontend/desktop/windows/winc/w32"
+	"github.com/milselarch/wails/v2/pkg/options"
 	"golang.org/x/sys/windows"
 	"log"
 	"os"

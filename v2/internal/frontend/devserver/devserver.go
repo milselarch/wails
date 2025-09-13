@@ -16,17 +16,17 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/wailsapp/wails/v2/pkg/assetserver"
+	"github.com/milselarch/wails/v2/pkg/assetserver"
 
-	"github.com/wailsapp/wails/v2/internal/frontend/runtime"
+	"github.com/milselarch/wails/v2/internal/frontend/runtime"
 
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
-	"github.com/wailsapp/wails/v2/internal/binding"
-	"github.com/wailsapp/wails/v2/internal/frontend"
-	"github.com/wailsapp/wails/v2/internal/logger"
-	"github.com/wailsapp/wails/v2/internal/menumanager"
-	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/milselarch/wails/v2/internal/binding"
+	"github.com/milselarch/wails/v2/internal/frontend"
+	"github.com/milselarch/wails/v2/internal/logger"
+	"github.com/milselarch/wails/v2/internal/menumanager"
+	"github.com/milselarch/wails/v2/pkg/options"
 )
 
 type Screen = frontend.Screen
