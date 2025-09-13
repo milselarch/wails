@@ -1,3 +1,11 @@
+This is a fork of the original Wails project.  
+One of C files has a compile error (on ubuntu specifically?) 
+that's merged in the main branch on the original repo but 
+no release has been made with said fix, and generated projects pull 
+wails from releases from GitHub,
+so this fork exists until a new release is made.
+
+
 <p align="center" style="text-align: center">
   <img src="./assets/images/logo-universal.png" width="55%"><br/>
 </p>
