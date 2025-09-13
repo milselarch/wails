@@ -82,11 +82,12 @@ static bool isNULLRectangle(GdkRectangle input)
 
 static gboolean onWayland()
 {
+    char *gdkBackend = getenv("XDG_SESSION_TYPE"); // "wayland" or "x11"
+
     switch (wmIsWayland)
     {
     case -1:
         {
-            char *gdkBackend = getenv("XDG_SESSION_TYPE");
             if(gdkBackend != NULL && strcmp(gdkBackend, "wayland") == 0)
             {
                 wmIsWayland = 1;

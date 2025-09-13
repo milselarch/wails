@@ -2,20 +2,20 @@ package main
 
 import (
 	"fmt"
-	"github.com/wailsapp/wails/v2/pkg/commands/buildtags"
+	"github.com/milselarch/wails/v2/pkg/commands/buildtags"
 	"os"
 	"runtime"
 	"strings"
 	"time"
 
 	"github.com/leaanthony/slicer"
+	"github.com/milselarch/wails/v2/cmd/wails/flags"
+	"github.com/milselarch/wails/v2/cmd/wails/internal/gomod"
+	"github.com/milselarch/wails/v2/internal/colour"
+	"github.com/milselarch/wails/v2/internal/project"
+	"github.com/milselarch/wails/v2/pkg/clilogger"
+	"github.com/milselarch/wails/v2/pkg/commands/build"
 	"github.com/pterm/pterm"
-	"github.com/wailsapp/wails/v2/cmd/wails/flags"
-	"github.com/wailsapp/wails/v2/cmd/wails/internal/gomod"
-	"github.com/wailsapp/wails/v2/internal/colour"
-	"github.com/wailsapp/wails/v2/internal/project"
-	"github.com/wailsapp/wails/v2/pkg/clilogger"
-	"github.com/wailsapp/wails/v2/pkg/commands/build"
 )
 
 func buildApplication(f *flags.Build) error {

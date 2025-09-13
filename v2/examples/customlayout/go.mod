@@ -4,7 +4,7 @@ go 1.22.0
 
 toolchain go1.24.1
 
-require github.com/wailsapp/wails/v2 v2.1.0
+require github.com/milselarch/wails/v2 v2.1.0
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect
@@ -27,7 +27,7 @@ require (
 	github.com/tkrajina/go-reflector v0.5.8 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.2 // indirect
-	github.com/wailsapp/go-webview2 v1.0.19 // indirect
+	github.com/wailsapp/go-webview2 v1.0.22 // indirect
 	github.com/wailsapp/mimetype v1.4.1 // indirect
 	golang.org/x/crypto v0.33.0 // indirect
 	golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1 // indirect
@@ -36,4 +36,4 @@ require (
 	golang.org/x/text v0.22.0 // indirect
 )
 
-replace github.com/wailsapp/wails/v2 v2.1.0 => ../..
+replace github.com/milselarch/wails/v2 v2.1.0 => ../..

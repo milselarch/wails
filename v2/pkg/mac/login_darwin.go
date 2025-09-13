@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/leaanthony/slicer"
+	"github.com/milselarch/wails/v2/internal/shell"
 	"github.com/pkg/errors"
-	"github.com/wailsapp/wails/v2/internal/shell"
 )
 
 // StartAtLogin will either add or remove this application to/from the login
